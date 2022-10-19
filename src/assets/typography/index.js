@@ -95,7 +95,7 @@ export const typography = {
           font-size: 14px;
           line-height: 24px;
           letter-spacing: 1.25px;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           `,
   subtitle1: `
           font-family: ${fonts.primary};

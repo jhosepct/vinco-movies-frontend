@@ -1,5 +1,9 @@
-import { AiFillStar } from "react-icons/ai";
 import PropTypes from "prop-types";
+
+import { AiFillStar } from "react-icons/ai";
+import { BsPlusLg } from "react-icons/bs";
+import { ImTicket } from "react-icons/im";
+
 import {
   Average,
   CardWrapper,
@@ -9,6 +13,7 @@ import {
   PosterWrapper,
   Title,
 } from "./styles";
+import Button from "../Button";
 
 function CardMovie({ movie }) {
   // console.log(props);
@@ -17,8 +22,13 @@ function CardMovie({ movie }) {
     <CardWrapper>
       <PosterWrapper>
         <MovieDetails>
-          <button>Ver Detalles</button>
-          <button>Ver Detalles</button>
+          <Button leftIcon={<ImTicket />} label="Ver Detalles" size="small" />
+          <Button
+            leftIcon={<BsPlusLg />}
+            label="Ver Detalles"
+            size="small"
+            background="#004a8c"
+          />
         </MovieDetails>
         <img src={poster} alt={title} />
       </PosterWrapper>

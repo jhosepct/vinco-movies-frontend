@@ -26,7 +26,6 @@ function App() {
   }, []);
   return (
     <>
-      <Button background="#004a8c" variant="secondary" />
       <ListMovies movies={movies} />
     </>
   );

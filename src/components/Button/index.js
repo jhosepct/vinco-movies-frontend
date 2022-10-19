@@ -23,10 +23,16 @@ function variantStyles(type, background) {
     case "primary":
       return `
         color: ${colors.white};
-        background-color: ${background || colors.defaultPink};
+        background-color: ${
+          background ? `${background}BF` : colors.defaultPink
+        };
         ${typography.button}
         &:hover {
-          background-color: ${background ? `${background}BF` : colors.darkPink};
+          background-color: ${background || colors.darkPink};
+          box-shadow: 0 2px 15.4px 0.6px ${
+            background ? `${background}73` : colors.defaultPink
+          };
+          transition: box-shadow .3s ease-out,background-color .3s ease-out,-webkit-box-shadow .3s ease-out;
         }
         `;
     case "secondary":
