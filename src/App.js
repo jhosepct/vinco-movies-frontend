@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Button from "./components/Button";
 import ListMovies from "./components/ListMovie";
 import { getGenres, getPopularMovies } from "./services/movies";
 import { parseMovies } from "./utils";
@@ -25,6 +26,7 @@ function App() {
   }, []);
   return (
     <>
+      <Button background="#004a8c" variant="secondary" />
       <ListMovies movies={movies} />
     </>
   );
