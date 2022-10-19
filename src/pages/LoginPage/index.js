@@ -1,21 +1,27 @@
 import styled from "@emotion/styled";
 
 import { Formik, Form } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import * as Yup from "yup";
 import { typography } from "../../assets/typography";
 import Button from "../../components/Button";
+import { FormError } from "../../components/FormError";
 import { FormInput } from "../../components/FormInput";
-const Main = styled.main`
+import { useAuth } from "../../context/UserContext";
+const Main = styled.div`
+  width: 100%;
+  height: 100vh;
   display: flex;
-  gap: 83px;
-  padding: 132px 120px 137px 318px;
 `;
 const FormContainer = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: start;
+  justify-content: center;
   gap: 2rem;
+  padding: 126px 100px 100px 100px !important;
   & h3 {
     ${typography.regular.headline3}
   }
@@ -23,13 +29,14 @@ const FormContainer = styled.div`
     ${typography.regular.headline6}
   }
   & form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    & button {
-      align-self: flex-end;
-      /* width: 80px; */
-    }
+  }
+  & button {
+    width: 100%;
+    align-self: center;
   }
 `;
 const Group = styled.div`
@@ -49,19 +56,36 @@ const ShowPassword = styled.div`
   cursor: pointer;
 `;
 
+const Poster = styled.div`
+  max-width: 50%;
+`;
+
 export const LoginPage = () => {
+  const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+
+  const [error, setError] = useState(null);
+
   return (
     <AuthLayout>
       <Main>
+        <Poster>
+          <img
+            src="https://aliados.rappi.com/static/media/imagen_2_tabletland.c7186827.png"
+            alt=""
+          />
+        </Poster>
         <FormContainer>
           <Group>
             <h3>Welcome back</h3>
             <h6>Login to you account as...</h6>
           </Group>
+
           <Formik
             onSubmit={(credentials) => {
-              console.log(credentials);
+              login(credentials).catch((error) => {
+                setError(error.response.data.message);
+              });
             }}
             initialValues={{
               email: "",
@@ -98,7 +122,8 @@ export const LoginPage = () => {
                   </ShowPassword>
                 }
               />
-              <Button type="submit">Login</Button>
+              {error && <FormError>{error}</FormError>}
+              <Button variant="primary" label="Login" type="submit" />
             </Form>
           </Formik>
         </FormContainer>

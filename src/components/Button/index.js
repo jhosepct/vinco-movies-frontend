@@ -17,8 +17,7 @@ function sizeStyles(size) {
   }
 }
 
-function variantStyles(type, background) {
-  // console.log(first)
+function variantStyles(type, background, shadow) {
   switch (type) {
     case "primary":
       return `
@@ -29,10 +28,16 @@ function variantStyles(type, background) {
         ${typography.button}
         &:hover {
           background-color: ${background || colors.darkPink};
+          transition: box-shadow .3s ease-out,background-color .3s ease-out,-webkit-box-shadow .3s ease-out;
+          ${
+            shadow
+              ? `
           box-shadow: 0 2px 15.4px 0.6px ${
             background ? `${background}73` : colors.defaultPink
-          };
-          transition: box-shadow .3s ease-out,background-color .3s ease-out,-webkit-box-shadow .3s ease-out;
+          };`
+              : ""
+          }
+          
         }
         `;
     case "secondary":
@@ -75,15 +80,28 @@ function variantStyles(type, background) {
   }
 }
 const ButtonStyled = styled.button`
+  width: fit-content;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   border-radius: 1rem;
   text-align: center;
-
   border: 1px solid transparent;
-  ${(props) => variantStyles(props.variant, props.background)}
+
+  .leftIcon{
+    align-self: flex-start;
+    // left: 0;
+  }
+  .rightIcon{
+    align-self: flex-end;
+    // right: 0;
+  }
+  .label{
+    align-selsf: center;
+  }
+  ${(props) => variantStyles(props.variant, props.background, props.shadow)}
   ${(props) => sizeStyles(props.size)})};
 `;
 
@@ -93,6 +111,9 @@ function Button({ label, rightIcon, leftIcon, ...rest }) {
       {leftIcon}
       {label}
       {rightIcon}
+      {/* <div className="leftIcon"></div>
+      <div className="label"></div>
+      <div className="rightIcon"></div> */}
     </ButtonStyled>
   );
 }
