@@ -1,6 +1,7 @@
 import { Formik, Form } from "formik";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import Button from "../../components/Button";
 import { FormError } from "../../components/FormError";
@@ -11,9 +12,9 @@ import * as Styled from "../Styles/index";
 function SignupPage() {
   const { signup } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
-
   const [error, setError] = useState(null);
-  console.log("Error");
+
+  const navigate = useNavigate();
   return (
     <Styled.AuthLayout>
       <Styled.Main>
@@ -26,12 +27,6 @@ function SignupPage() {
         <Styled.FormContainer>
           <Styled.Group>
             <h3>Sign Up</h3>
-            <h6>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-              blanditiis illo qui rem nobis possimus iusto dolores, iure, unde
-              quasi quia, animi assumenda accusantium modi recusandae quos?
-              Animi, vitae optio?...
-            </h6>
           </Styled.Group>
 
           <Formik
@@ -102,7 +97,11 @@ function SignupPage() {
                 }
               />
               {error && <FormError>{error}</FormError>}
-              <Button variant="primary" label="Create" type="submit" />
+              <Button variant="primary" label="Create account" type="submit" />
+              <Styled.Link>
+                do have an account yet?{" "}
+                <span onClick={() => navigate("/login")}>Log in</span>
+              </Styled.Link>
             </Form>
           </Formik>
         </Styled.FormContainer>

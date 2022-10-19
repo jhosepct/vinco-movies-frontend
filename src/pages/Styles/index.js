@@ -31,6 +31,10 @@ export const FormContainer = styled.div`
     width: 100%;
     align-self: center;
   }
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
 `;
 export const Group = styled.div`
   display: flex;
