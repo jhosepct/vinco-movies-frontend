@@ -11,7 +11,7 @@ export const InputContainer = styled.div`
   gap: 0.5rem;
   border: 1px solid ${(props) => props.color};
   border-radius: 0.5rem;
-  color: ${colors.darkGray};
+  // color: ${colors.darkGray};
   &:hover {
     border: 1px solid ${(props) => props.colorHover};
   }
@@ -26,5 +26,5 @@ export const StyledInput = styled.input`
   font-size: 14px;
   width: 100%;
   background: ${(props) => props.background};
-  color: ${colors.white};
+  color: ${(props) => props.colorText};
 `;

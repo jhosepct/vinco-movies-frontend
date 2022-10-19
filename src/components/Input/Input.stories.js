@@ -8,6 +8,7 @@ export default {
     background: { control: "color" },
     color: { control: "color" },
     colorHover: { control: "color" },
+    colorText: { control: "color" },
   },
 };
 

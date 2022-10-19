@@ -26,4 +26,5 @@ Input.defaultProps = {
   background: "transparent",
   color: colors.defaultPink,
   colorHover: colors.darkPink,
+  colorText: colors.white,
 };

@@ -3,6 +3,8 @@ import { Input } from "../Input";
 import { FormError } from "../FormError";
 import { Container, Message } from "./styles";
 
+import PropTypes from "prop-types";
+
 export const FormInput = ({ label, caption, updateFile, ...props }) => {
   const [field] = useField({ ...props });
   return (
@@ -13,4 +15,13 @@ export const FormInput = ({ label, caption, updateFile, ...props }) => {
       <ErrorMessage name={props.name} component={FormError} />
     </Container>
   );
+};
+
+FormInput.propTypes = {
+  label: PropTypes.string,
+  caption: PropTypes.string,
+  colorText: PropTypes.string,
+  color: PropTypes.string,
+  colorHover: PropTypes.string,
+  background: PropTypes.string,
 };
