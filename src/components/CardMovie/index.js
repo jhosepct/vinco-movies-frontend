@@ -22,10 +22,10 @@ function CardMovie({ movie }) {
     <CardWrapper>
       <PosterWrapper>
         <MovieDetails>
-          <Button leftIcon={<ImTicket />} label="Ver Detalles" size="small" />
+          <Button leftIcon={<ImTicket />} label="To buy" size="small" />
           <Button
             leftIcon={<BsPlusLg />}
-            label="Ver Detalles"
+            label="Details"
             size="small"
             background="#004a8c"
           />
