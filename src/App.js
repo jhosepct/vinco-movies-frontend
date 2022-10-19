@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Button from "./components/Button";
 import ListMovies from "./components/ListMovie";
+import { LoginPage } from "./pages/LoginPage";
 import { getGenres, getPopularMovies } from "./services/movies";
 import { parseMovies } from "./utils";
 
@@ -26,6 +26,7 @@ function App() {
   }, []);
   return (
     <>
+      <LoginPage />
       <ListMovies movies={movies} />
     </>
   );

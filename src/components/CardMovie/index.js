@@ -16,8 +16,7 @@ import {
 import Button from "../Button";
 
 function CardMovie({ movie }) {
-  // console.log(props);
-  const { title, poster, vote_average, overview, year } = movie;
+  const { title, poster, vote_average, year } = movie;
   return (
     <CardWrapper>
       <PosterWrapper>
