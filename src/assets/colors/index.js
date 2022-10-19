@@ -12,6 +12,7 @@ export const colors = {
   white: "#ffffff",
   shallowPink: "rgba(244, 143, 177, 0.15)",
   shallowGray: "rgba(97, 97, 97, 0.15)",
+  error: "#ff5a5f",
   gray: {
     50: "#F7FAFC",
     100: "#EDF2F7",

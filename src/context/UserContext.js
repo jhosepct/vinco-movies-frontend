@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiFetch } from "../services/api-fetch";
 import * as Services from "../services/user-services";
 import { userReducer } from "./userReducer";
 
@@ -29,8 +30,18 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    return Services.logout().then(() => {
-      dispatch({ type: "setUser", payload: null });
+    return Services.logout()
+      .then(() => {
+        apiFetch.defaults.headers.common["Authorization"] = null;
+        dispatch({ type: "removeUser" });
+        navigate("/login");
+      })
+      .catch((e) => console.log(e.message));
+  };
+
+  const signup = (credentials) => {
+    return Services.signup(credentials).then((user) => {
+      navigate("/login");
     });
   };
 
@@ -38,6 +49,7 @@ export const AuthProvider = ({ children }) => {
     user,
     login,
     logout,
+    signup,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

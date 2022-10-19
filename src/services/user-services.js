@@ -27,4 +27,11 @@ export const login = (credentials) => {
 export const logout = () => {
   sessionStorage.removeItem(tokenKey);
   sessionStorage.removeItem(id);
+  return apiFetch.get("/logout").catch((e) => console.log(e));
+};
+
+export const signup = (credentials) => {
+  return apiFetch.post("/signup", credentials).then(({ response }) => {
+    return response;
+  });
 };

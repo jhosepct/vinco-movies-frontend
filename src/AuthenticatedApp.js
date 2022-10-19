@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Button from "./components/Button";
 import ListMovies from "./components/ListMovie";
+import { useAuth } from "./context/UserContext";
 import { getGenres, getPopularMovies } from "./services/movies";
 import { parseMovies } from "./utils";
 
@@ -24,5 +27,16 @@ export const AuthenticatedApp = () => {
     });
   }, [genres]);
 
-  return <ListMovies movies={movies} />;
+  const { logout } = useAuth();
+
+  return (
+    <>
+      <Button label="Logout" onClick={() => logout()} />
+
+      <Routes>
+        <Route path="/" element={<ListMovies movies={movies} />} />
+        {/* <ListMovies movies={movies} /> */}
+      </Routes>
+    </>
+  );
 };
