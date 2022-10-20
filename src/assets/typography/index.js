@@ -111,6 +111,14 @@ export const typography = {
           line-height: 20px;
           letter-spacing: 0.1px;
       `,
+
+  subtitle3: `
+          font-family: ${fonts.primary};
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.4px;
+  `,
   body1: `
           font-family: ${fonts.secondary};
           font-weight: 400;

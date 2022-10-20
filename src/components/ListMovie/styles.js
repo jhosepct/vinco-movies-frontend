@@ -12,6 +12,7 @@ function typeStyles(type) {
         display: flex;
         gap: 1rem;
         width: 100%;
+        
         overflow: scroll;
         scrollbar-width: none;
         &::-webkit-scrollbar {
@@ -23,6 +24,7 @@ function typeStyles(type) {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
+        justify-content: center;
       `;
     default:
       break;

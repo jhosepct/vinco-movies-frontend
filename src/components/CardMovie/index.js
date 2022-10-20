@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 
 import { AiFillStar } from "react-icons/ai";
 import { BsPlusLg } from "react-icons/bs";
-import { ImTicket } from "react-icons/im";
 import { FaTrailer } from "react-icons/fa";
 
 import {

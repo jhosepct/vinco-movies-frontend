@@ -80,6 +80,9 @@ export const reset = css`
       object-position: center center;
     }
   }
+  *::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
 `;
 
 export const global = css`

@@ -13,6 +13,9 @@ export const Title = styled.div`
   &hover::before {
     content: "${(props) => props.title}";
   }
+  @media (max-width: 768px) {
+    ${typography.subtitle3}
+  }
 `;
 export const Average = styled.div`
   display: flex;
@@ -42,6 +45,10 @@ export const PosterWrapper = styled.div`
     max-width: 100%;
     display: block;
   }
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 240px;
+  }
 `;
 
 export const MovieDetails = styled.div`
@@ -56,6 +63,10 @@ export const MovieDetails = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.25rem;
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 240px;
+  }
 `;
 
 export const MovieDescription = styled.div``;
@@ -64,4 +75,7 @@ export const Description = styled.div`
   display: flex;
   justify-content: space-between;
   ${typography.subtitle2}
+  @media (max-width: 768px) {
+    ${typography.subtitle3}
+  }
 `;

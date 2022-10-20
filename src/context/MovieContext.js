@@ -60,8 +60,7 @@ export const MovieProvider = ({ children }) => {
 
   const watchVideo = (id) => {
     getVideos(id).then((data) => {
-      const length = data.results.length;
-      const irl = data.results[length - 1].key;
+      const irl = data.results.pop().key;
       setLink(irl);
       dispatch({ type: "openModal" });
     });
