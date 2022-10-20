@@ -21,6 +21,8 @@ export const Average = styled.div`
 `;
 
 export const PosterWrapper = styled.div`
+  width: 200px;
+  height: 300px;
   cursor: pointer;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   overflow: hidden;
