@@ -1,57 +1,49 @@
-import styled from "@emotion/styled";
-import { useEffect, useState } from "react";
 import ListMovies from "../../components/ListMovie";
-import { getGenres, getPopularMovies } from "../../services/movies";
-import { parseMovies } from "../../utils";
+import { useMovie } from "../../context/MovieContext";
 
-const Collection = styled.div`
-  margin-top: 40px;
-  padding: 0 3%;
-  position: relative;
-`;
-
-const ContentMovie = styled.div`
-  position: relative;
-  height: 376px;
-`;
+import * as Styled from "./styles";
 
 function MoviePage() {
-  const [genres, setGenres] = useState({});
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    getGenres().then((data) => {
-      const genresObject = {};
-
-      for (const genre of data.genres) {
-        genresObject[genre.id] = genre.name;
-      }
-
-      setGenres(genresObject);
-    });
-  }, []);
-  useEffect(() => {
-    getPopularMovies().then((data) => {
-      const movies = parseMovies(data.results, genres);
-      setMovies(movies);
-    });
-  }, [genres]);
+  const { popularMovies, topRatedMovies, upcomingMovies, nowPlayingMovies } =
+    useMovie();
 
   return (
     <>
-      <Collection>
-        <h1>Popular Movies</h1>
-        <ContentMovie>
-          <ListMovies movies={movies} type="row" />
-        </ContentMovie>
-      </Collection>
+      {popularMovies.length === 0 ? null : (
+        <Styled.Collection>
+          <h1>Popular Movies</h1>
+          <Styled.ContentMovie>
+            <ListMovies movies={popularMovies} type="row" />
+          </Styled.ContentMovie>
+        </Styled.Collection>
+      )}
 
-      <Collection>
-        <h1>Top Rated Movies</h1>
-        <ContentMovie>
-          <ListMovies movies={movies} />
-        </ContentMovie>
-      </Collection>
-      {/* <ListMovies movies={movies} /> */}
+      {topRatedMovies.length === 0 ? null : (
+        <Styled.Collection>
+          <h1>Top Rated Movies</h1>
+          <Styled.ContentMovie>
+            <ListMovies movies={topRatedMovies} type="row" />
+          </Styled.ContentMovie>
+        </Styled.Collection>
+      )}
+
+      {upcomingMovies.length === 0 ? null : (
+        <Styled.Collection>
+          <h1>Upcoming movies</h1>
+          <Styled.ContentMovie>
+            <ListMovies movies={upcomingMovies} type="row" />
+          </Styled.ContentMovie>
+        </Styled.Collection>
+      )}
+
+      {nowPlayingMovies.length === 0 ? null : (
+        <Styled.Collection>
+          <h1>Now Playing Movies</h1>
+          <Styled.ContentMovie>
+            <ListMovies movies={nowPlayingMovies} type="row" />
+          </Styled.ContentMovie>
+        </Styled.Collection>
+      )}
     </>
   );
 }

@@ -4,6 +4,7 @@ export function parseMovies(movies, genres) {
 
 export function parseMovie(movie, genres) {
   const {
+    id,
     title,
     release_date,
     vote_average,
@@ -11,7 +12,9 @@ export function parseMovie(movie, genres) {
     poster_path,
     genre_ids,
   } = movie;
-  return {
+  //api.themoviedb.org/3/movie/62e5ca6cfc5f060059c2f61a/watch/providers?api_key=d0e635bd8e7d8acfef880d00cc231400
+  https: return {
+    id,
     title,
     year: release_date.substr(0, 4),
     vote_average,
