@@ -46,7 +46,7 @@ $ npm run storybook
 
 ## Demo:
 
-- Vinco movies: [link](https://vinco-movies-gznwgknpi-jhosepct.vercel.app/)
+- Vinco movies: [link](https://vinco-movies-frontend-9s74dofyq-jhosepct.vercel.app)
 
 <div align="center" style="display:flex; flex-wrap: wrap;" >
   <img src="https://github.com/jhosepct/vinco-movies-frontend/blob/main/1.png" title="hover text">
