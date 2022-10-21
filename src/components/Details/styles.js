@@ -2,7 +2,19 @@ import styled from "@emotion/styled";
 import { colors } from "../../assets/colors";
 import { typography } from "../../assets/typography";
 
-export const Wrapper = styled.div``;
+export const WrapperDetails = styled.div`
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem;
+`;
 
 export const Details = styled.div`
   width: 300px;

@@ -1,24 +1,13 @@
 import { css } from "@emotion/css";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getMovieDetails } from "../../services/movies";
-import FrameYoutube from "../FrameYoutube";
 
 import * as Styled from "./styles";
 
 import { AiFillStar } from "react-icons/ai";
 import Button from "../Button";
 
-function Details() {
-  const { id } = useParams();
-
-  const [movie, setMovie] = useState({});
-  useEffect(() => {
-    getMovieDetails(id).then((response) => setMovie(response));
-  }, []);
-  console.log(movie);
+function Details({ movie }) {
   return (
-    <>
+    <Styled.WrapperDetails>
       <Styled.Wrapper>
         <div
           className={css`
@@ -77,16 +66,13 @@ function Details() {
             </Styled.Rating>
 
             <Styled.Buttons>
-              <Button variant="secondary" background="#ffffff" label="Button" />
-              <Button variant="secondary" background="#ffffff" label="Button" />
+              <Button variant="secondary" label="Button" colorText="#ffffff" />
+              <Button variant="secondary" label="Button" colorText="#ffffff" />
             </Styled.Buttons>
           </Styled.Details>
         </div>
       </Styled.Wrapper>
-      <div className={css``}>
-        <FrameYoutube link="KAR_frNR0AA" />
-      </div>
-    </>
+    </Styled.WrapperDetails>
   );
 }
 

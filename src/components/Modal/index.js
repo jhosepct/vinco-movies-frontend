@@ -1,11 +1,13 @@
+import { css } from "@emotion/css";
 import { RiCloseLine } from "react-icons/ri";
+import { useMovie } from "../../context/MovieContext";
 
-import { Modal } from "./styles";
+import * as Styled from "./styles";
 
 function Modal({ children }) {
   const { dispatch } = useMovie();
   return (
-    <Modal>
+    <Styled.Modal>
       <div
         className={css`
           display: flex;
@@ -20,9 +22,9 @@ function Modal({ children }) {
           `}
           onClick={() => dispatch({ type: "closeModal" })}
         />
-        {children}
+        <div>{children}</div>
       </div>
-    </Modal>
+    </Styled.Modal>
   );
 }
 
