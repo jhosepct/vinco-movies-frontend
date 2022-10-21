@@ -1,7 +1,9 @@
 import React from "react";
 
-function FrameYoutube({ link }) {
-  const url = `https://www.youtube.com/embed/${link}?autoplay=1`;
+function FrameYoutube({ link, autoplay }) {
+  const url = autoplay
+    ? `https://www.youtube.com/embed/${link}?autoplay=1`
+    : `https://www.youtube.com/embed/${link}`;
   return (
     <iframe
       width="854"

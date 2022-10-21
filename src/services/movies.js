@@ -58,4 +58,5 @@ export {
   getTopRatedMovies,
   getUpcomingMovies,
   getVideos,
+  getMovieDetails,
 };

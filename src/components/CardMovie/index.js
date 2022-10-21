@@ -15,10 +15,12 @@ import {
 } from "./styles";
 import Button from "../Button";
 import { useMovie } from "../../context/MovieContext";
+import { useNavigate } from "react-router-dom";
 
 function CardMovie({ movie }) {
   const { watchVideo } = useMovie();
   const { title, poster, vote_average, year } = movie;
+  const navigate = useNavigate();
   return (
     <>
       <CardWrapper>
@@ -39,7 +41,7 @@ function CardMovie({ movie }) {
               size="small"
               variant="secondary"
               background="#004a8c"
-              onClick={() => console.log(movie.id)}
+              onClick={() => navigate(`/movie/${movie.id}`)}
               shadow={true}
               colorText="#fff"
             />

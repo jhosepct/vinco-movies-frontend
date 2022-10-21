@@ -56,13 +56,14 @@ function MoviePage() {
                 `}
                 onClick={() => dispatch({ type: "closeModal" })}
               />
-              <FrameYoutube link={link} />
+              <FrameYoutube link={link} autoplay />
             </div>
           </Modal>
         )}
 
         {movies.map((movie, id) => (
           <SectionMovie
+            key={id}
             sectionMovies={movie.movies}
             title={movie.name}
             type="row"
