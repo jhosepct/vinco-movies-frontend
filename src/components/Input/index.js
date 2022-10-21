@@ -24,7 +24,7 @@ Input.proTypes = {
 Input.defaultProps = {
   placeholder: "Placeholder",
   background: "transparent",
-  color: colors.defaultPink,
-  colorHover: colors.darkPink,
+  color: colors.red[400],
+  colorHover: colors.red[500],
   colorText: colors.white,
 };

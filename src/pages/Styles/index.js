@@ -60,11 +60,11 @@ export const Poster = styled.div`
 export const Link = styled.div`
   text-align: center;
   span {
-    color: ${colors.lightPink};
+    color: ${colors.red[400]};
     cursor: pointer;
   }
   span:hover {
-    color: ${colors.defaultPink};
+    color: ${colors.red[500]};
     text-decoration: underline;
   }
 `;
