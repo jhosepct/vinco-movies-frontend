@@ -1,12 +1,38 @@
 # Vinco Movies
 
+Vinco movies using React, react-router(v6), axios, formik, yup, storybook, emotion and react-icons
+
+Packages we are using:
+
+- react-router-dom(v6): [link](https://reactrouter.com/docs/en/v6/getting-started/overview)
+- axios: [link](https://axios-http.com/)
+- formik: [link](https://formik.org/)
+- yup: [link](https://www.npmjs.com/package/yup)
+- storybook: [link](https://storybook.js.org/)
+- emotion: [link](https://emotion.sh/docs/introduction)
+- react-icons: [link](hhttps://react-icons.github.io/react-icons/)
+
+**Packages we are using:**
+
+- fontawesome: [link](https://fontawesome.com/v5/docs/web/use-with/react)
+- react-router-dom(v6): [link](https://reactrouter.com/docs/en/v6/getting-started/overview)
+
 ## Quick start
 
-- Make sure your NodeJS and npm versions are up to date for `React 17`
+- Make sure your NodeJS and npm versions are up to date for `React ^17`
 
 - Install dependencies: `npm install` or `yarn`
+  A little intro about the installation.
 
-- Start the server: `npm run dev` or `yarn dev`
+```
+$ npm i
+```
+
+- Start the server: `npm run start`
+
+```
+$ npm run start
+```
 
 - Views are on: `localhost:3000`
 
