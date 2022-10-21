@@ -5,14 +5,10 @@ export const getUser = () => {
   const token = sessionStorage.getItem(tokenKey);
   apiFetch.defaults.headers.common["Authorization"] = token;
   const id_user = sessionStorage.getItem(id);
-  return apiFetch
-    .get(`/profile/${id_user}`)
-    .then(({ data }) => {
-      const { token, ...user } = data;
-      // sessionStorage.setItem(tokenKey, token);
-      return user;
-    })
-    .catch((e) => console.log(e.response.data.message));
+  return apiFetch.get(`/profile/${id_user}`).then(({ data }) => {
+    const { token, ...user } = data;
+    return user;
+  });
 };
 
 export const login = (credentials) => {

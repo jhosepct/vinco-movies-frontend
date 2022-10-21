@@ -18,6 +18,9 @@ function typeStyles(type) {
         &::-webkit-scrollbar {
           display: none;
         }
+        @media (max-width: 768px) {
+          gap: 0.5rem;
+        }
       `;
     case "column":
       return `

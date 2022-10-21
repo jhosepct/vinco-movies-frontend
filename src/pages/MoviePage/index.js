@@ -6,6 +6,8 @@ import { RiCloseLine } from "react-icons/ri";
 import styled from "@emotion/styled";
 import { css } from "@emotion/css";
 import SectionMovie from "./section-movie";
+import Button from "../../components/Button";
+import { useAuth } from "../../context/UserContext";
 
 const Modal = styled.div`
   position: fixed;
@@ -24,6 +26,8 @@ function MoviePage() {
   const { popularMovies, topRatedMovies, upcomingMovies, nowPlayingMovies } =
     useMovie();
 
+  const { logout } = useAuth();
+
   const movies = [
     { name: "Movies", movies: popularMovies },
     { name: "Top Rated", movies: topRatedMovies },
@@ -33,44 +37,42 @@ function MoviePage() {
 
   const { dispatch, modal, link } = useMovie();
   return (
-    <div>
-      {modal && (
-        <Modal>
-          <div
-            className={css`
-              display: flex;
-              flex-direction: column;
-            `}
-          >
-            <RiCloseLine
-              size={25}
+    <>
+      <Button label="Logout" onClick={() => logout()} />
+      <div>
+        {modal && (
+          <Modal>
+            <div
               className={css`
-                align-self: flex-end;
-                cursor: pointer;
+                display: flex;
+                flex-direction: column;
               `}
-              onClick={() => dispatch({ type: "closeModal" })}
-            />
-            <FrameYoutube link={link} />
-          </div>
-        </Modal>
-      )}
+            >
+              <RiCloseLine
+                size={25}
+                className={css`
+                  align-self: flex-end;
+                  cursor: pointer;
+                `}
+                onClick={() => dispatch({ type: "closeModal" })}
+              />
+              <FrameYoutube link={link} />
+            </div>
+          </Modal>
+        )}
 
-      {Object.keys(movies).map(
-        (key) => console.log(movies)
-        // <SectionMovie key={key} sectionMovies={movies[key]} type="row" />
-      )}
+        {movies.map((movie, id) => (
+          <SectionMovie
+            sectionMovies={movie.movies}
+            title={movie.name}
+            type="row"
+          />
+        ))}
 
-      {movies.map((movie, id) => (
-        <SectionMovie
-          sectionMovies={movie.movies}
-          title={movie.name}
-          type="row"
-        />
-      ))}
-
-      <SectionMovie title="Popular movies" sectionMovies={popularMovies} />
-      <SectionMovie title="Popular movies" sectionMovies={popularMovies} />
-    </div>
+        <SectionMovie title="Popular movies" sectionMovies={popularMovies} />
+        <SectionMovie title="Popular movies" sectionMovies={popularMovies} />
+      </div>
+    </>
   );
 }
 

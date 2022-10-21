@@ -15,6 +15,7 @@ export const Title = styled.div`
   }
   @media (max-width: 768px) {
     ${typography.subtitle3}
+    display: none;
   }
 `;
 export const Average = styled.div`
@@ -76,6 +77,6 @@ export const Description = styled.div`
   justify-content: space-between;
   ${typography.subtitle2}
   @media (max-width: 768px) {
-    ${typography.subtitle3}
+    display: none;
   }
 `;

@@ -111,9 +111,6 @@ function Button({ label, rightIcon, leftIcon, ...rest }) {
       {leftIcon}
       {label}
       {rightIcon}
-      {/* <div className="leftIcon"></div>
-      <div className="label"></div>
-      <div className="rightIcon"></div> */}
     </ButtonStyled>
   );
 }

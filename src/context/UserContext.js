@@ -18,7 +18,8 @@ export const AuthProvider = ({ children }) => {
         dispatch({ type: "setUser", payload: user });
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.response.data.message);
+        navigate("/login");
       });
   }, []);
 

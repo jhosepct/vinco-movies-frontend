@@ -1,16 +1,22 @@
 import CartMovie from ".";
+import { MovieProvider } from "../../context/MovieContext";
 
 export default {
   title: "Components/CartMovie",
   component: CartMovie,
 };
 
-const Template = (args) => <CartMovie {...args} />;
+const Template = (args) => (
+  <MovieProvider>
+    <CartMovie {...args} />
+  </MovieProvider>
+);
 
 export const Default = Template.bind({});
 
 Default.args = {
   movie: {
+    id: 532639,
     title: "Pinocchio",
     year: "2022",
     vote_average: 6.7,
