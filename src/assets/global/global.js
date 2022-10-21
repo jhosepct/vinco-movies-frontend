@@ -95,6 +95,5 @@ export const global = css`
   body {
     background: ${colors.background};
     color: ${colors.white};
-    display: flex;
   }
 `;
