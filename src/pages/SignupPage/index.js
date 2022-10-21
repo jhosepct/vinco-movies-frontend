@@ -3,9 +3,11 @@ import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import { images } from "../../assets/images/home/homeImages";
 import Button from "../../components/Button";
 import { FormError } from "../../components/FormError";
 import { FormInput } from "../../components/FormInput";
+import Slides from "../../components/Slides";
 import { useAuth } from "../../context/UserContext";
 import * as Styled from "../Styles/index";
 
@@ -15,14 +17,21 @@ function SignupPage() {
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
+
+  const imgs = images;
   return (
     <Styled.AuthLayout>
       <Styled.Main>
         <Styled.Poster>
-          <img
-            src="https://aliados.rappi.com/static/media/imagen_2_tabletland.c7186827.png"
-            alt=""
-          />
+          <Slides images={imgs}>
+            <Styled.Text
+              ondragstart="return false"
+              onselectstart="return false"
+              oncontextmenu="return false"
+            >
+              Lorem ipsum dolor <span>sit amet</span> consectetur.
+            </Styled.Text>
+          </Slides>
         </Styled.Poster>
         <Styled.FormContainer>
           <Styled.Group>

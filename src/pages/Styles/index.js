@@ -68,3 +68,14 @@ export const Link = styled.div`
     text-decoration: underline;
   }
 `;
+
+export const Text = styled.p`
+  z-index: 1;
+  padding: 0 100px;
+  ${typography.headline2}
+  ${typography.bold}
+  span {
+    color: ${colors.red[500]};
+  }
+  user-select: none;
+`;

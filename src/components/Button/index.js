@@ -17,7 +17,7 @@ function sizeStyles(size) {
   }
 }
 
-function variantStyles(type, background, shadow) {
+function variantStyles(type, background, shadow, colorText) {
   switch (type) {
     case "primary":
       return `
@@ -43,7 +43,7 @@ function variantStyles(type, background, shadow) {
     case "secondary":
       return `
       border-color: ${background || colors.defaultPink};
-      color: ${colors.defaultGray};
+      color: ${colorText};
       ${typography.button}
       background-color: transparent;
       &:hover {
@@ -51,10 +51,7 @@ function variantStyles(type, background, shadow) {
         background-color: ${
           background ? `${background}1A` : colors.shallowPink
         };
-      }
-      &:hover svg {
-        fill: ${colors.darkGray};
-        stroke: ${colors.darkGray};
+        color: ${colorText || colors.darkGray};
       }
         `;
     case "ghost":
@@ -101,7 +98,13 @@ const ButtonStyled = styled.button`
   .label{
     align-selsf: center;
   }
-  ${(props) => variantStyles(props.variant, props.background, props.shadow)}
+  ${(props) =>
+    variantStyles(
+      props.variant,
+      props.background,
+      props.shadow,
+      props.colorText
+    )}
   ${(props) => sizeStyles(props.size)})};
 `;
 
@@ -123,6 +126,7 @@ Button.propTypes = {
   leftIcon: PropTypes.element,
   rightIcon: PropTypes.element,
   onClick: PropTypes.func,
+  colorText: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -131,6 +135,7 @@ Button.defaultProps = {
   label: "Button",
   background: null,
   onClick: undefined,
+  colorText: colors.defaultGray,
 };
 
 export default Button;

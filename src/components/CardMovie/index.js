@@ -28,15 +28,20 @@ function CardMovie({ movie }) {
               leftIcon={<FaTrailer />}
               label="See trailer"
               size="small"
+              variant="secondary"
               shadow={true}
               onClick={() => watchVideo(movie.id)}
+              colorText="#fff"
             />
             <Button
               leftIcon={<BsPlusLg />}
               label="Details"
               size="small"
+              variant="secondary"
               background="#004a8c"
+              onClick={() => console.log(movie.id)}
               shadow={true}
+              colorText="#fff"
             />
           </MovieDetails>
           <img src={poster} alt={title} />
