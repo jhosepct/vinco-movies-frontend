@@ -36,6 +36,14 @@ $ npm run start
 
 - Views are on: `localhost:3000`
 
+- Start storybook: `npm run storybook`
+
+```
+$ npm run storybook
+```
+
+- Views are on: `localhost:6006`
+
 ## Demo:
 
 <div align="center" style="display:flex; flex-wrap: wrap;" >
