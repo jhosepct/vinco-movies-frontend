@@ -8,7 +8,7 @@ Packages we are using:
 - yup: [link](https://www.npmjs.com/package/yup)
 - storybook: [link](https://storybook.js.org/)
 - emotion: [link](https://emotion.sh/docs/introduction)
-- react-icons: [link](hhttps://react-icons.github.io/react-icons/)
+- react-icons: [link](https://react-icons.github.io/react-icons/)
 
 ## Quick start
 
