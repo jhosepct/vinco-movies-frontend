@@ -1,7 +1,5 @@
 # Vinco Movies
 
-Vinco movies using React, react-router(v6), axios, formik, yup, storybook, emotion and react-icons
-
 Packages we are using:
 
 - react-router-dom(v6): [link](https://reactrouter.com/docs/en/v6/getting-started/overview)
@@ -11,11 +9,6 @@ Packages we are using:
 - storybook: [link](https://storybook.js.org/)
 - emotion: [link](https://emotion.sh/docs/introduction)
 - react-icons: [link](hhttps://react-icons.github.io/react-icons/)
-
-**Packages we are using:**
-
-- fontawesome: [link](https://fontawesome.com/v5/docs/web/use-with/react)
-- react-router-dom(v6): [link](https://reactrouter.com/docs/en/v6/getting-started/overview)
 
 ## Quick start
 
